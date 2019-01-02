@@ -87,7 +87,7 @@ public class JavaSparkSQLExample {
 
   private static void runBasicDataFrameExample(SparkSession spark) throws AnalysisException {
     // $example on:create_df$
-    Dataset<Row> df = spark.read().json("src/main/resources/people.json");
+    Dataset<Row> df = spark.read().json("data/people.json");
 
     // Displays the content of the DataFrame to stdout
     df.show();
