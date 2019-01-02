@@ -21,7 +21,7 @@ public class SimpleCSVRead {
 
 	
 	public static void main(String[] args) throws AnalysisException {
-		String csvFile = "/home/prakrish/spark-simple/src/main/resources/moviedata.csv";
+		String csvFile = "src/main/resources/moviedata.csv";
 		Dataset<Row> df = spark.read().format("com.databricks.spark.csv").option("header", "true").load(csvFile);
 					
 		df.createGlobalTempView("movie");
