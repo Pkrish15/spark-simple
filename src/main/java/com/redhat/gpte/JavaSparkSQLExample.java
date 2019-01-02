@@ -87,7 +87,7 @@ public class JavaSparkSQLExample {
 
   private static void runBasicDataFrameExample(SparkSession spark) throws AnalysisException {
     // $example on:create_df$
-    Dataset<Row> df = spark.read().json("data/people.json");
+    Dataset<Row> df = spark.read().json("/opt/jboss/data/people.json");
 
     // Displays the content of the DataFrame to stdout
     df.show();
@@ -216,7 +216,7 @@ public class JavaSparkSQLExample {
     transformedDS.collect(); // Returns [2, 3, 4]
 
     // DataFrames can be converted to a Dataset by providing a class. Mapping based on name
-    String path = "data/people.json";
+    String path = "/opt/jboss/data/people.json";
     Dataset<Person> peopleDS = spark.read().json(path).as(personEncoder);
     peopleDS.show();
     // +----+-------+
@@ -233,7 +233,7 @@ public class JavaSparkSQLExample {
     // $example on:schema_inferring$
     // Create an RDD of Person objects from a text file
     JavaRDD<Person> peopleRDD = spark.read()
-      .textFile("data/people.txt")
+      .textFile("/opt/jboss/data/people.txt")
       .javaRDD()
       .map(line -> {
         String[] parts = line.split(",");
