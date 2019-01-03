@@ -1,4 +1,4 @@
-package com.redhat.gpte;
+/*package com.redhat.gpte;
 // $example on:programmatic_schema$
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +44,7 @@ import org.apache.spark.sql.AnalysisException;
 import static org.apache.spark.sql.functions.col;
 // $example off:untyped_ops$
 
-public class JavaSparkSQLExample {
+public class SparkSimple {
   // $example on:create_ds$
   public static class Person implements Serializable {
     private String name;
@@ -324,4 +324,4 @@ public class JavaSparkSQLExample {
     // +-------------+
     // $example off:programmatic_schema$
   }
-}
+}*/

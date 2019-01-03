@@ -1,17 +1,19 @@
 /**
  * 
- *//*
+ */
 package com.redhat.gpte;
+
+import static org.apache.spark.sql.functions.col;
 
 import org.apache.spark.sql.AnalysisException;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-*//**
+/**
  * @author prakrish
  *
- *//*
+ */
 public class SimpleCSVRead {
 	static SparkSession spark = SparkSession.builder()
 			.appName("SimpleCSVRead")
@@ -21,16 +23,17 @@ public class SimpleCSVRead {
 
 	
 	public static void main(String[] args) throws AnalysisException {
-		String csvFile = "src/main/resources/moviedata.csv";
+		String csvFile = "data/moviedata.csv";
 		Dataset<Row> df = spark.read().format("com.databricks.spark.csv").option("header", "true").load(csvFile);
 					
 		df.createGlobalTempView("movie");
-		df.schema();
 		df.printSchema();
 		df.show();
-		df.registerTempTable("MovieTable");
+	    df.select(col("name"), col("year")).show();
+
+		df.select(col("name")).show();
+		
 		
 		
 	}
 }
-*/
