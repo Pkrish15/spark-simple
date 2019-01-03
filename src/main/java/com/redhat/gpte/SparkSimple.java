@@ -1,4 +1,4 @@
-/*package com.redhat.gpte;
+package com.redhat.gpte;
 // $example on:programmatic_schema$
 import java.util.ArrayList;
 import java.util.List;
@@ -324,4 +324,4 @@ public class SparkSimple {
     // +-------------+
     // $example off:programmatic_schema$
   }
-}*/
+}
